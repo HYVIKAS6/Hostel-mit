@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Dashboard - Hostel Management</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="dashboard-wrapper">
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <h3>Student Portal</h3>
+            </div>
+            <ul class="sidebar-nav">
+                <li class="active"><a href="student_dashboard.html">
+                    <span class="icon"><!-- Dashboard Icon --></span> Dashboard
+                </a></li>
+                <li><a href="#">
+                    <span class="icon"><!-- Profile Icon --></span> My Profile
+                </a></li>
+                <!-- Add other links as needed -->
+            </ul>
+        </aside>
+        <main class="main-content">
+            <header class="header">
+                <h1>Student Dashboard</h1>
+                <a href="#" class="btn-logout" id="student-logout-btn">Logout</a>
+            </header>
+            <section class="page-content">
+                <div class="card-grid">
+                    <!-- Card 1: View Allocated Room -->
+                    <div class="content-card" id="allocated-room-card">
+                        <div class="icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="currentColor"><path d="M0 0h24v24H0V0z" fill="none"/><path d="M19 19V4h-4V3H9v1H5v15h14zM11 5h2v2h-2V5zM7 19v-5h2v5H7zm4 0v-5h2v5h-2zm4 0v-5h2v5h-2z"/></svg>
+                        </div>
+                        <h3>View Allocated Room</h3>
+                        <p id="allocated-room-details">Loading room details...</p>
+                    </div>
+                    
+                    <!-- Card 2: Submit Complaint -->
+                    <a href="complaint_management.html" class="content-card" style="text-decoration: none; color: inherit;">
+                        <div class="icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="currentColor"><path d="M0 0h24v24H0z" fill="none"/><path d="M20 2H4c-1.1 0-1.99.9-1.99 2L2 22l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-7 9h-2V5h2v6zm0 4h-2v-2h2v2z"/></svg>
+                        </div>
+                        <h3>Submit Complaint</h3>
+                        <p>Report an issue regarding your room, facilities, or other matters.</p>
+                        <span class="btn">Submit Now</span>
+                    </a>
+
+                    <!-- Card 3: View Complaint Status -->
+                    <div class="content-card">
+                        <div class="icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 24 24" height="24px" viewBox="0 0 24 24" width="24px" fill="currentColor"><g><rect fill="none" height="24" width="24"/></g><g><g><path d="M20,2H4C2.9,2,2,2.9,2,4v18l4-4h14c1.1,0,2-0.9,2-2V4C22,2.9,21.1,2,20,2z M13.57,11.57L12,15l-1.57-3.43L7,10l3.43-1.57 L12,5l1.57,3.43L17,10L13.57,11.57z"/></g></g></svg>
+                        </div>
+                        <h3>View Complaint Status</h3>
+                        <p>Check the status of your previously submitted complaints.</p>
+                        <a href="complaint_management.html" class="btn">Check Status</a>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+    <script src="js/script.js" defer></script>
+</body>
+</html>

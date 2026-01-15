@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Management - Hostel Management</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="dashboard-wrapper">
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <h3>Admin Panel</h3>
+            </div>
+            <ul class="sidebar-nav">
+                <li><a href="admin_dashboard.html">
+                    <span class="icon"><!-- Dashboard Icon --></span> Dashboard
+                </a></li>
+                <li><a href="room_allocation.html">
+                    <span class="icon"><!-- Room Icon --></span> Allocate Rooms
+                </a></li>
+                <li><a href="complaint_management.html">
+                    <span class="icon"><!-- Complaint Icon --></span> View Complaints
+                </a></li>
+                 <li class="active"><a href="student_management.html">
+                    <span class="icon"><!-- Profile Icon --></span> Manage Students
+                </a></li>
+            </ul>
+        </aside>
+        <main class="main-content">
+            <header class="header">
+                <h1>Student Management</h1>
+                <a href="#" class="btn-logout" id="student-manage-logout-btn">Logout</a>
+            </header>
+            <section class="page-content">
+
+                <div class="form-container">
+                    <h2>Add a New Student</h2>
+                    <form id="add-student-form">
+                        <div class="form-group">
+                            <label for="student-name">Student Name</label>
+                            <input type="text" id="student-name" placeholder="e.g., John Doe" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="student-id">Student ID</label>
+                            <input type="number" id="student-id" placeholder="e.g., 12345" required>
+                        </div>
+                        <button type="submit" class="btn">Add Student</button>
+                    </form>
+                </div>
+
+                <div class="table-container" style="margin-top: 40px;">
+                    <h2>Current Student List</h2>
+                    <div class="stats-container" style="margin-bottom: 20px; font-weight: 600;">
+                        <span>Total Students: <span id="total-students">0</span></span> |
+                        <span>Unassigned Students: <span id="unassigned-students">0</span></span>
+                    </div>
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>Student Name</th>
+                                <th>Student ID</th>
+                                <th>Assigned Room</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- Student data will be dynamically inserted here by script.js -->
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </main>
+    </div>
+    <script src="js/script.js" defer></script>
+</body>
+</html>

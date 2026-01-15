@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Room Allocation - Hostel Management</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="dashboard-wrapper">
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <h3>Admin Panel</h3>
+            </div>
+            <ul class="sidebar-nav">
+                <li><a href="admin_dashboard.html">
+                    <span class="icon"><!-- Dashboard Icon --></span> Dashboard
+                </a></li>
+                <li class="active"><a href="room_allocation.html">
+                    <span class="icon"><!-- Room Icon --></span> Allocate Rooms
+                </a></li>
+                <li><a href="complaint_management.html">
+                    <span class="icon"><!-- Complaint Icon --></span> View Complaints
+                </a></li>
+            </ul>
+        </aside>
+        <main class="main-content">
+            <header class="header">
+                <h1>Room Allocation</h1>
+                <a href="#" class="btn-logout" id="room-alloc-logout-btn">Logout</a>
+            </header>
+            <section class="page-content">
+                <!-- Allocation Form -->
+                <div class="form-container">
+                    <h2>Allocate a Room</h2>
+                    <form>
+                        <div class="form-group">
+                            <label for="student">Select Student</label>
+                            <select id="student" name="student">
+                                <option value="">-- Choose a student --</option>
+                                <option value="student1">John Doe (ID: 12345)</option>
+                                <option value="student2">Jane Smith (ID: 12346)</option>
+                                <option value="student3">Peter Jones (ID: 12347)</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="room">Select Room</label>
+                            <select id="room" name="room">
+                                <option value="">-- Choose an available room --</option>
+                                <option value="room101">Room 101 (Capacity: 2/3)</option>
+                                <option value="room102">Room 102 (Capacity: 1/3)</option>
+                                <option value="room205">Room 205 (Capacity: 3/4)</option>
+                            </select>
+                        </div>
+                        <button type="submit" class="btn">Allocate Room</button>
+                    </form>
+                </div>
+
+                <!-- Current Allocations Table -->
+                <div class="table-container" style="margin-top: 40px;">
+                    <h2>Current Room Allocations</h2>
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>Student Name</th>
+                                <th>Student ID</th>
+                                <th>Room Number</th>
+                                <th>Date Allocated</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Emily White</td>
+                                <td>12344</td>
+                                <td>101</td>
+                                <td>2024-08-01</td>
+                                <td><a href="#">Deallocate</a></td>
+                            </tr>
+                            <tr>
+                                <td>Michael Brown</td>
+                                <td>12342</td>
+                                <td>101</td>
+                                <td>2024-08-01</td>
+                                <td><a href="#">Deallocate</a></td>
+                            </tr>
+                            <tr>
+                                <td>Sarah Green</td>
+                                <td>12340</td>
+                                <td>102</td>
+                                <td>2024-08-02</td>
+                                <td><a href="#">Deallocate</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </main>
+    </div>
+    <script src="js/script.js" defer></script>
+</body>
+</html>
