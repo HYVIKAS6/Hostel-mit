@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Profile - Hostel Management</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="dashboard-wrapper">
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <h3>Student Portal</h3>
+            </div>
+            <ul class="sidebar-nav">
+                <li><a href="student_dashboard.html">
+                    <span class="icon"></span> Dashboard
+                </a></li>
+                <li class="active"><a href="my_profile.html">
+                    <span class="icon"></span> My Profile
+                </a></li>
+            </ul>
+        </aside>
+        <main class="main-content">
+            <header class="header">
+                <h1>My Profile</h1>
+                <a href="student_dashboard.html" class="btn">Back to Dashboard</a>
+            </header>
+            <section class="page-content">
+                <div class="profile-container">
+                    <div class="profile-header">
+                        <h2 id="student-name"></h2>
+                        <p id="student-email"></p>
+                    </div>
+                    <div class="profile-details">
+                        <h3>Personal Information</h3>
+                        <div class="info-grid">
+                            <div>
+                                <strong>Student ID:</strong>
+                                <p id="student-id"></p>
+                            </div>
+                            <div>
+                                <strong>Phone Number:</strong>
+                                <p id="student-phone"></p>
+                            </div>
+                        </div>
+                        <h3>Hostel Information</h3>
+                        <div class="info-grid">
+                            <div>
+                                <strong>Room Number:</strong>
+                                <p id="room-number"></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+    <script src="js/script.js"></script>
+</body>
+</html>

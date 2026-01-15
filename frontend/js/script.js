@@ -108,8 +108,36 @@ document.addEventListener('DOMContentLoaded', () => {
         setupStudentLoginPage();
     } else if (path === 'student_register.html') {
         setupStudentRegisterPage();
+    } else if (path === 'my_profile.html') {
+        setupMyProfilePage();
     }
 });
+
+function setupMyProfilePage() {
+    if (!currentLoggedInUser) {
+        window.location.href = 'student_login.html';
+        return;
+    }
+
+    // Assuming currentLoggedInUser has the necessary details.
+    // You may need to fetch more details from a 'students' array if not.
+    const student = students.find(s => s.id === currentLoggedInUser.id);
+
+    if (student) {
+        document.getElementById('student-name').textContent = student.name;
+        document.getElementById('student-email').textContent = student.username; // Assuming username is email
+        document.getElementById('student-id').textContent = student.id;
+        document.getElementById('student-phone').textContent = student.contact || 'Not Provided';
+        
+        if (student.room) {
+            const room = rooms.find(r => r.id === student.room);
+            document.getElementById('room-number').textContent = room ? `Room ${room.id}` : 'N/A';
+        } else {
+            document.getElementById('room-number').textContent = 'Not Allocated';
+        }
+    }
+}
+
 
 
 // --- Complaint Management Functions ---
