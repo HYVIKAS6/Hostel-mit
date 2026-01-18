@@ -1,12 +1,12 @@
 /* --- Global Styles & Variables --- */
 :root {
     --primary-color: #4A90E2; /* Soft Blue */
-    --secondary-color: #F4F7FA; /* Light Gray Background */
-    --card-bg: #FFFFFF;
-    --text-color: #333333;
-    --text-light: #777777;
-    --border-color: #E8E8E8;
-    --shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    --secondary-color: #000000; /* Dark Background */
+    --card-bg: #1A1A1A;
+    --text-color: #FFFFFF;
+    --text-light: #AAAAAA;
+    --border-color: #333333;
+    --shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
     --border-radius: 12px;
 }
 
@@ -59,7 +59,7 @@ a {
 }
 
 .login-card {
-    background: var(--secondary-color);
+    background: #222222;
     border: 1px solid var(--border-color);
     border-radius: var(--border-radius);
     padding: 30px;
@@ -70,7 +70,7 @@ a {
 
 .login-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
 }
 
 .login-card .icon {
@@ -139,7 +139,7 @@ a {
 }
 
 .sidebar-nav li a:hover, .sidebar-nav li.active a {
-    background-color: var(--secondary-color);
+    background-color: #222222;
     color: var(--primary-color);
 }
 
@@ -264,6 +264,8 @@ a {
     border: 1px solid var(--border-color);
     border-radius: 8px;
     font-size: 1rem;
+    background-color: #222222;
+    color: var(--text-color);
 }
 
 .form-group textarea {
@@ -285,7 +287,7 @@ a {
 
 .data-table th {
     font-weight: 600;
-    background-color: var(--secondary-color);
+    background-color: #222222;
 }
 
 .status {
@@ -295,5 +297,5 @@ a {
     font-weight: 600;
 }
 
-.status-pending { background-color: #fef0c7; color: #b54708; }
-.status-resolved { background-color: #d1fadf; color: #03543f; }
+.status-pending { background-color: #b54708; color: #fef0c7; }
+.status-resolved { background-color: #03543f; color: #d1fadf; }

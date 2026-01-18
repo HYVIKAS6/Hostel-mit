@@ -18,7 +18,7 @@ public class StudentService {
             System.out.println("2. File a Complaint");
             System.out.println("3. View My Complaints");
             System.out.println("4. Logout");
-            System.out.print("Enter choice: ");
+            System.out.print("Enter a  choice: ");
 
             try {
                 int choice = Integer.parseInt(scanner.nextLine());

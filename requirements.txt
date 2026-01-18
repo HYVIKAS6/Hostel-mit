@@ -1,0 +1,9 @@
+# This project is built with Java and HTML/CSS/JS, not Python.
+# This file lists the general software needed to run the project.
+
+# Backend Requirement:
+# A Java Development Kit (JDK) is required to compile and run the Java server code.
+# You can download it from Oracle or use an open-source distribution like OpenJDK.
+
+# Frontend Requirement:
+# A modern web browser (e.g., Google Chrome, Mozilla Firefox, Microsoft Edge) is needed to open the HTML files.

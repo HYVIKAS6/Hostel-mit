@@ -1,18 +1,20 @@
 // --- Data Management ---
 // To persist data across page loads without a backend, we use localStorage.
 
-let students, rooms, complaints, currentLoggedInUser, isAdminLoggedIn;
+let students, rooms, complaints, fees, currentLoggedInUser, isAdminLoggedIn;
 
 function saveData() {
     localStorage.setItem('students', JSON.stringify(students));
     localStorage.setItem('rooms', JSON.stringify(rooms));
     localStorage.setItem('complaints', JSON.stringify(complaints));
+    localStorage.setItem('fees', JSON.stringify(fees));
 }
 
 function loadData() {
     const studentsData = localStorage.getItem('students');
     const roomsData = localStorage.getItem('rooms');
     const complaintsData = localStorage.getItem('complaints');
+    const feesData = localStorage.getItem('fees');
     const loggedInUserData = localStorage.getItem('currentLoggedInUser');
     const adminLoggedInData = localStorage.getItem('isAdminLoggedIn');
 
@@ -41,9 +43,19 @@ function loadData() {
         complaints = JSON.parse(complaintsData);
     } else {
         complaints = [
-            { id: 1, date: "2024-08-10", studentName: "Jane Smith", room: "205", issue: "Leaky faucet in the bathroom.", status: "Pending" },
-            { id: 2, date: "2024-08-09", studentName: "Peter Jones", room: "301", issue: "Wi-Fi not working on the 3rd floor.", status: "Resolved" },
-            { id: 3, date: "2024-08-08", studentName: "Jane Smith", room: "205", issue: "Loud music from the adjacent room after 11 PM.", status: "Resolved" },
+            { id: 1, date: "2026-08-10", studentName: "Jane Smith", room: "205", issue: "Leaky faucet in the bathroom.", status: "Pending" },
+            { id: 2, date: "2026-08-09", studentName: "Peter Jones", room: "301", issue: "Wi-Fi not working on the 3rd floor.", status: "Resolved" },
+            { id: 3, date: "2026-08-08", studentName: "Jane Smith", room: "205", issue: "Loud music from the adjacent room after 11 PM.", status: "Resolved" },
+        ];
+    }
+
+    if (feesData) {
+        fees = JSON.parse(feesData);
+    } else {
+        fees = [
+            { studentId: 12344, amount: 15000, status: "Paid" },
+            { studentId: 12342, amount: 15000, status: "Paid" },
+            { studentId: 12340, amount: 15000, status: "Unpaid" },
         ];
     }
 
@@ -110,6 +122,8 @@ document.addEventListener('DOMContentLoaded', () => {
         setupStudentRegisterPage();
     } else if (path === 'my_profile.html') {
         setupMyProfilePage();
+    } else if (path === 'payment.html') {
+        setupPaymentPage();
     }
 });
 
@@ -135,6 +149,42 @@ function setupMyProfilePage() {
         } else {
             document.getElementById('room-number').textContent = 'Not Allocated';
         }
+    }
+}
+
+function setupPaymentPage() {
+    if (!currentLoggedInUser) {
+        window.location.href = 'student_login.html';
+        return;
+    }
+
+    const fee = fees.find(f => f.studentId === currentLoggedInUser.id);
+    const payNowBtn = document.getElementById('pay-now-btn');
+
+    if (fee) {
+        document.getElementById('fee-amount').textContent = fee.amount;
+        const paymentStatusEl = document.getElementById('payment-status');
+        paymentStatusEl.textContent = fee.status;
+
+        if (fee.status === 'Unpaid') {
+            payNowBtn.textContent = 'Pay Now';
+            payNowBtn.disabled = false;
+            payNowBtn.addEventListener('click', () => {
+                fee.status = 'Paid';
+                saveData();
+                paymentStatusEl.textContent = 'Paid';
+                payNowBtn.textContent = 'Paid';
+                payNowBtn.disabled = true;
+                alert('Payment successful!');
+            });
+        } else {
+            payNowBtn.textContent = 'Paid';
+            payNowBtn.disabled = true;
+        }
+    } else {
+        document.getElementById('fee-amount').textContent = 'N/A';
+        document.getElementById('payment-status').textContent = 'N/A';
+        payNowBtn.style.display = 'none';
     }
 }
 

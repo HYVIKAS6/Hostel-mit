@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Profile - Hostel Management</title>
+    <title>Payment - Hostel Management</title>
     <link rel="stylesheet" href="css/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
@@ -17,44 +17,42 @@
                 <li><a href="student_dashboard.html">
                     <span class="icon"></span> Dashboard
                 </a></li>
-                <li class="active"><a href="my_profile.html">
+                <li><a href="my_profile.html">
                     <span class="icon"></span> My Profile
                 </a></li>
-                <li><a href="payment.html">
+                <li class="active"><a href="payment.html">
                     <span class="icon"></span> Payment
                 </a></li>
             </ul>
         </aside>
         <main class="main-content">
             <header class="header">
-                <h1>My Profile</h1>
+                <h1>Payment Information</h1>
                 <a href="student_dashboard.html" class="btn">Back to Dashboard</a>
             </header>
             <section class="page-content">
                 <div class="profile-container">
-                    <div class="profile-header">
-                        <h2 id="student-name"></h2>
-                        <p id="student-email"></p>
-                    </div>
                     <div class="profile-details">
-                        <h3>Personal Information</h3>
+                        <h3>Payment Method</h3>
                         <div class="info-grid">
                             <div>
-                                <strong>Student ID:</strong>
-                                <p id="student-id"></p>
+                                <strong>Payment System:</strong>
+                                <p>Paypal</p>
                             </div>
-                            <div>
-                                <strong>Phone Number:</strong>
-                                <p id="student-phone"></p>
-                            </div>
+                           
                         </div>
-                        <h3>Hostel Information</h3>
+                        <h3>Fee Payment</h3>
                         <div class="info-grid">
                             <div>
-                                <strong>Room Number:</strong>
-                                <p id="room-number"></p>
+                                <strong>Fee Amount:</strong>
+                                <p id="fee-amount">15000</p>
+                            </div>
+                            <div>
+                                <strong>Payment Status:</strong>
+                                <p id="payment-status">Paid</p>
                             </div>
                         </div>
+                        <button class="btn" id="pay-now-btn">Pay Now</button>
                     </div>
                 </div>
             </section>
