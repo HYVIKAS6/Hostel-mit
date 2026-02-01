@@ -3,10 +3,7 @@
 <!-- Animated Header -->
 <img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=6,11,20&height=300&section=header&text=Hostel-MIT&fontSize=90&fontAlignY=35&animation=twinkling&fontColor=fff&desc=Next-Gen%20Hostel%20Management%20Platform&descAlignY=55&descSize=25" />
 
-<!-- Dynamic Typing Animation -->
-<p align="center">
-  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=28&duration=3000&pause=1000&color=00D9FF&center=true&vCenter=true&multiline=true&repeat=true&width=800&height=100&lines=🏨+Streamline+Your+Hostel+Operations;⚡+Real-Time+Management+%7C+Smart+Automation;💎+Built+with+Java+%26+Modern+Technologies" alt="Typing SVG" />
-</p>
+
 
 <!-- Badges -->
 <p align="center">
